@@ -1,0 +1,127 @@
+.login_bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    overflow-y: auto;
+}
+
+.login {
+    width: 380px;
+    margin-top: 105px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 4px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 6px 0 rgba(31, 69, 77, 0.16);
+    box-shadow: 0 1px 6px 0 rgba(31, 69, 77, 0.16);
+}
+
+.login_gradation {
+    height: 6px;
+    border-radius: 3px 3px 0 0;
+    background-image: linear-gradient(1deg, #FF8C00, #FFFF44);
+}
+
+.login_inner {
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.login_logo {
+    width: 178px;
+    margin: 35px auto 45px;
+    display: block;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+.login_lead {
+    margin-top: 20px;
+    margin-bottom: 48px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.login_message {
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.login_label {
+    margin-bottom: 8px;
+    color: #7f7f7f;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.login_input {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 300px;
+    height: 32px;
+    padding: 6px 8px;
+    border: solid 1px #e1e6e6;
+    border-radius: 2px;
+    outline: none;
+    background-color: #fff;
+    -webkit-transition: border .2s, -webkit-box-shadow .2s;
+    transition: border .2s, -webkit-box-shadow .2s;
+    transition: border .2s, box-shadow .2s;
+    transition: border .2s, box-shadow .2s, -webkit-box-shadow .2s;
+}
+
+.login_input:hover {
+    box-shadow: 0 0 7px #FF8856;
+    border: 1px solid #FF8856;
+}
+
+.login_input:focus {
+    box-shadow: 0 0 7px #FF6928;
+    border: 1px solid #FF6928;
+}
+
+.login_input-primary {
+    margin-bottom: 24px;
+}
+
+.login_btn {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 300px;
+    margin-top: 30px;
+    margin-bottom: 24px;
+    padding: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #FF8C00;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    position: relative;
+    opacity: 1;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.login_forgot {
+    border-top: 1px solid #e1e6e6;
+    padding-top: 32px;
+    padding-bottom: 36px;
+    text-align: center;
+}
+
+.login_resetLink {
+    text-decoration: underline;
+    color: #FF8C00;
+    -webkit-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+    cursor: pointer;
+}

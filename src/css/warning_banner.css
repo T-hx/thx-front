@@ -1,0 +1,10 @@
+.is-fail {
+    opacity: 1;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #fdf3f3;
+    color: #ff7777;
+    padding: 12px;
+    margin-bottom: 24px;
+    border-radius: 2px;
+}
