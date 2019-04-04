@@ -1,0 +1,7 @@
+.side-navi {
+    float: left;
+    width: 200px;
+    height: 1000px;
+    background-color: #FF8C00;
+    display: block;
+}

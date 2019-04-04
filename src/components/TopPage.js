@@ -3,7 +3,7 @@ import Header from "./Header";
 import ThxTxnsArea from './ThxTxnsArea'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import SideNavi from './SideNavi'
-import '../css/tab.css'
+import '../css/top_page.css'
 
 class TopPage extends Component {
   constructor(props) {
@@ -18,19 +18,21 @@ class TopPage extends Component {
       <Fragment>
         <Header />
         <SideNavi />
-        <p>タイムライン</p>
-        <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({tabIndex})}>
-          <TabList>
-            <Tab>すべて</Tab>
-            <Tab>おくった</Tab>
-            <Tab>もらった</Tab>
-            <Tab>拍手</Tab>
-          </TabList>
-          <TabPanel><ThxTxnsArea value='all'/></TabPanel>
-          <TabPanel><ThxTxnsArea value='send'/></TabPanel>
-          <TabPanel><ThxTxnsArea value='receive'/></TabPanel>
-          <TabPanel> </TabPanel>
-        </Tabs>
+        <div className="main-container">
+          <p>タイムライン</p>
+          <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({tabIndex})}>
+            <TabList>
+              <Tab>すべて</Tab>
+              <Tab>おくった</Tab>
+              <Tab>もらった</Tab>
+              <Tab>拍手</Tab>
+            </TabList>
+            <TabPanel><ThxTxnsArea value='all'/></TabPanel>
+            <TabPanel><ThxTxnsArea value='send'/></TabPanel>
+            <TabPanel><ThxTxnsArea value='receive'/></TabPanel>
+            <TabPanel> </TabPanel>
+          </Tabs>
+        </div>
       </Fragment>
     )
   }

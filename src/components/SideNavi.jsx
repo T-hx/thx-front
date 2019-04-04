@@ -3,7 +3,7 @@ import '../css/side_navi.css'
 
 function SideNavi() {
   return (
-    <div>a</div>
+    <div className='side-navi'>a</div>
   )
 }
 
