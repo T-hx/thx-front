@@ -17,7 +17,7 @@ class TopPage extends Component {
     return (
       <Fragment>
         <Header />
-        <SideNavi className={} />
+        <SideNavi />
         <p>タイムライン</p>
         <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({tabIndex})}>
           <TabList>
