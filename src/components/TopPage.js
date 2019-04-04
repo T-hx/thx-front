@@ -1,7 +1,8 @@
-import React, {Component} from "react";
+import React, {Component, Fragment} from "react";
 import Header from "./Header";
-import ThxTxnsList from './ThxTxns'
+import ThxTxnsArea from './ThxTxnsArea'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import SideNavi from './SideNavi'
 import '../css/tab.css'
 
 class TopPage extends Component {
@@ -14,18 +15,23 @@ class TopPage extends Component {
   
   render() {
     return (
-      <div>
-        <Header/>
+      <Fragment>
+        <Header />
+        <SideNavi className={} />
         <p>タイムライン</p>
         <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({tabIndex})}>
           <TabList>
             <Tab>すべて</Tab>
+            <Tab>おくった</Tab>
+            <Tab>もらった</Tab>
+            <Tab>拍手</Tab>
           </TabList>
-          <TabPanel>
-            <ThxTxnsList/>
-          </TabPanel>
+          <TabPanel><ThxTxnsArea value='all'/></TabPanel>
+          <TabPanel><ThxTxnsArea value='send'/></TabPanel>
+          <TabPanel><ThxTxnsArea value='receive'/></TabPanel>
+          <TabPanel> </TabPanel>
         </Tabs>
-      </div>
+      </Fragment>
     )
   }
 }

@@ -41,7 +41,7 @@ class NewThxTxnForm extends React.Component {
       headers: HEADERS,
       body: JSON.stringify(params)
     })
-      .then()
+      .then();
     this.setState({ str: '' });
   }
   

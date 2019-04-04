@@ -1,10 +1,9 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {ActionCableConsumer} from 'react-actioncable-provider';
 import {API_ROOT} from '../constants';
 import ThxTxn from "./ThxTxn";
-import NewThxTxnForm from "./NewThxTxnForm";
 
-class ThxTxnsList extends React.Component {
+class AllThxTxns extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,26 +19,25 @@ class ThxTxnsList extends React.Component {
   };
   
   handleReceivedThxTxn(response) {
-    const { thx_txn } = response;
+    console.log(response.thx_txn);
     this.setState({
-      thx_txns: [...this.state.thx_txns, thx_txn],
+      thx_txns: [...this.state.thx_txns, response.thx_txn],
     });
   };
   
   render() {
     let { thx_txns } = this.state;
     return (
-      <div>
-        <NewThxTxnForm/>
+      <Fragment>
         <ActionCableConsumer channel={{channel: 'ThxTxnsChannel'}} onReceived={this.handleReceivedThxTxn}>
           <ul>{mapThxTxns(thx_txns)}</ul>
         </ActionCableConsumer>
-      </div>
+      </Fragment>
     );
   };
 }
 
-export default ThxTxnsList;
+export default AllThxTxns;
 
 const mapThxTxns = (thx_txns) => {
   return thx_txns.reverse().map(thx_txn => {
