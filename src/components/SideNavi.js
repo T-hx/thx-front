@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/side_navi.css'
+import '../css/SideNavi.css'
 
 function SideNavi() {
   return (

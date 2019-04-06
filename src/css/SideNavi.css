@@ -1,0 +1,8 @@
+.side-navi {
+    float: left;
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+    width: 15%;
+    border-right: solid 3px #EEEEEE;
+}

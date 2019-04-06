@@ -1,16 +1,20 @@
 import React, {Component} from "react";
+import { withRouter } from "react-router";
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
-import {API_ROOT, HEADERS} from "../constants";
+import {API_ROOT} from "../constants";
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSignOut = this.handleSignOut.bind(this)
+  }
+  
   handleSignOut(event) {
-    event.preventDefault();
     fetch(`${API_ROOT}/auth/sign_out`, {
       method: 'DELETE',
-      headers: HEADERS,
-      data: JSON.parse(localStorage.user)
+      headers: JSON.parse(localStorage.user),
     })
-      .then(() => {
+      .then((res) => {
         localStorage.removeItem('user');
         this.props.history.push('/login');
       })
@@ -40,4 +44,4 @@ class Header extends Component {
   }
 }
 
-export default Header
+export default withRouter(Header)

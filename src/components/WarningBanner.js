@@ -1,5 +1,5 @@
 import React from "react";
-import '../css/warning_banner.css'
+import '../css/WanningBanner.css'
 
 class WarningBanner extends React.Component {
   render() {

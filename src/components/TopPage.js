@@ -1,9 +1,10 @@
-import React, {Component, Fragment} from "react";
+import React, {Component} from "react";
 import Header from "./Header";
 import ThxTxnsArea from './ThxTxnsArea'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import {Tab, Tabs, TabList, TabPanel} from 'react-tabs';
 import SideNavi from './SideNavi'
-import '../css/top_page.css'
+import '../css/TopPage.css'
+import {Redirect} from "react-router";
 
 class TopPage extends Component {
   constructor(props) {
@@ -15,25 +16,27 @@ class TopPage extends Component {
   
   render() {
     return (
-      <Fragment>
-        <Header />
-        <SideNavi />
-        <div className="main-container">
-          <p>タイムライン</p>
-          <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({tabIndex})}>
-            <TabList>
-              <Tab>すべて</Tab>
-              <Tab>おくった</Tab>
-              <Tab>もらった</Tab>
-              <Tab>拍手</Tab>
-            </TabList>
-            <TabPanel><ThxTxnsArea value='all'/></TabPanel>
-            <TabPanel><ThxTxnsArea value='send'/></TabPanel>
-            <TabPanel><ThxTxnsArea value='receive'/></TabPanel>
-            <TabPanel> </TabPanel>
-          </Tabs>
-        </div>
-      </Fragment>
+      localStorage.getItem('user') ?
+        <div className='page'>
+          <SideNavi />
+          <Header />
+          <div className="main-container">
+            <h1>タイムライン</h1>
+            <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({tabIndex})}>
+              <TabList>
+                <Tab>すべて</Tab>
+                <Tab>おくった</Tab>
+                <Tab>もらった</Tab>
+                <Tab>拍手</Tab>
+              </TabList>
+              <TabPanel><ThxTxnsArea value='all'/></TabPanel>
+              <TabPanel><ThxTxnsArea value='send'/></TabPanel>
+              <TabPanel><ThxTxnsArea value='receive'/></TabPanel>
+              <TabPanel> </TabPanel>
+            </Tabs>
+          </div>
+        </div> :
+        <Redirect to={'/login'}/>
     )
   }
 }

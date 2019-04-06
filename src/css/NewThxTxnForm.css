@@ -1,0 +1,22 @@
+
+form {
+    padding: 0;
+    margin: 0;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+}
+
+.form-outer {
+    padding: 10px 10px;
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    background-image: linear-gradient(217deg, #DBFF71, #FF9900 70.71%);
+    border-radius: 3px 3px 0 0;
+}
+
+.form-inner {
+}
