@@ -1,0 +1,68 @@
+.thx-txn-container {
+    height: 80px;
+    margin: 20px 0;
+    border-bottom: solid 1px #e1e6e6;
+}
+
+
+.sender {
+    float: left;
+}
+
+.sender > ul {
+    padding: 0;
+    margin: 0;
+}
+
+.sender > ul > li {
+    list-style: none;
+    display: inline-block;
+}
+
+.sender > ul > .name {
+    width: 100px;
+}
+
+.sender > ul > .nick-name {
+    width: 80px;
+}
+
+.sender > ul > .date {
+    width: 200px;
+}
+
+.sender > .comment {
+    padding: 20px;
+}
+
+.thx-txn-container > p {
+    float: left;
+    padding: 20px;
+}
+
+.receiver {
+    float: left;
+    padding: 20px;
+}
+
+.receiver > ul {
+    padding: 0;
+    margin: 0;
+}
+
+.receiver > ul > li {
+    list-style: none;
+    display: inline-block;
+}
+
+.receiver > ul > .name {
+    width: 100px;
+}
+
+.receiver > ul > .nick-name {
+    width: 80px;
+}
+
+.receiver > ul > .date {
+    width: 200px;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import {API_ROOT, HEADERS} from '../constants';
+import { API_ROOT } from '../constants';
 import '../css/NewThxTxnForm.css'
 
 class NewThxTxnForm extends React.Component {
