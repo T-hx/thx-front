@@ -1,0 +1,60 @@
+.side-nav-container {
+    float: left;
+    font-size: 12px;
+    height: 100%;
+    width: 20%;
+    border-right: solid 3px #EEEEEE;
+    margin: auto;
+}
+
+.thx-amount-area {
+    float: left;
+    color: #999999;
+    width: 120px;
+}
+
+.thx-amount-area > .title {
+    font-size: 12px;
+    text-align: center;
+}
+
+.thx-amount-area > .amount {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.side-nav-container > nav {
+    clear: both;
+    margin: 20px;
+    padding: 10px 0;
+    display: block;
+    border-bottom: solid 2px #EEEEEE;
+    border-top: solid 2px #EEEEEE;
+}
+
+.side-nav-container > nav > ul {
+    list-style: none;
+    font-size: 14px;
+    padding: 0px;
+    margin: 0;
+}
+
+.side-nav-container > nav > ul > li {
+    padding: 5px;
+    border-style: none;
+    color: #999999;
+}
+
+.side-nav-container > nav > ul > li > a:link {
+    color: #999999;
+}
+
+.side-nav-container > nav > ul > li > a:visited {
+    color: #999999;
+}
+
+.side-nav-container > nav > ul > li > a:hover {
+    color: #FF8C00;
+    text-decoration: none;
+}

@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { withRouter } from "react-router";
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
 import {API_ROOT} from "../constants";
+import '../css/Header.css'
 
 class Header extends Component {
   constructor(props) {
@@ -9,12 +9,12 @@ class Header extends Component {
     this.handleSignOut = this.handleSignOut.bind(this)
   }
   
-  handleSignOut(event) {
+  handleSignOut() {
     fetch(`${API_ROOT}/auth/sign_out`, {
       method: 'DELETE',
       headers: JSON.parse(localStorage.user),
     })
-      .then((res) => {
+      .then(() => {
         localStorage.removeItem('user');
         this.props.history.push('/login');
       })
@@ -22,24 +22,12 @@ class Header extends Component {
   
   render () {
     return (
-      <div>
-        <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">{JSON.parse(localStorage.getItem('user')).uid}</NavDropdown.Item>
-                <NavDropdown.Item eventKey={2} href="#" onClick={this.handleSignOut}>Sign out</NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-            <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-              <Button variant="outline-success">Search</Button>
-            </Form>
-          </Navbar.Collapse>
-        </Navbar>
-      </div>
+      <nav className='header-nav'>
+        <ul>
+          <li>{JSON.parse(localStorage.getItem('user')).uid}</li>
+          <li onClick={this.handleSignOut}>Sign out</li>
+        </ul>
+      </nav>
     )
   }
 }

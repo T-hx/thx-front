@@ -2,7 +2,8 @@ import React, {Component} from "react";
 import Header from "./Header";
 import ThxTxnsArea from './ThxTxnsArea'
 import {Tab, Tabs, TabList, TabPanel} from 'react-tabs';
-import SideNavi from './SideNavi'
+import SideNav from './SideNav'
+import '../css/Reset.css'
 import '../css/TopPage.css'
 import {Redirect} from "react-router";
 
@@ -18,7 +19,7 @@ class TopPage extends Component {
     return (
       localStorage.getItem('user') ?
         <div className='page'>
-          <SideNavi />
+          <SideNav />
           <Header />
           <div className="main-container">
             <h1>タイムライン</h1>

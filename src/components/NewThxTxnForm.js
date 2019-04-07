@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {API_ROOT, HEADERS} from '../constants';
 import '../css/NewThxTxnForm.css'
 
@@ -10,7 +10,6 @@ class NewThxTxnForm extends React.Component {
       thx_txn: {
         thx: 0,
         comment: '',
-        sender: '',
         receiver: ''
       }
     };
@@ -30,16 +29,22 @@ class NewThxTxnForm extends React.Component {
       thx_txn: {
         thx: str[0],
         comment: str[1],
-        sender: str[2],
         receiver: str[3]
       }
     };
     
     this.setState(params);
-    
+    let user = JSON.parse(localStorage.user);
     fetch(`${API_ROOT}/thx_txns`, {
       method: 'POST',
-      headers: HEADERS,
+      headers: {
+        'Content-Type': 'application/json',
+        "Accept": 'application/json',
+        "access-token": user["access-token"],
+        "token-type": "Bearer",
+        "client": user["client"],
+        "uid": user["uid"]
+      },
       body: JSON.stringify(params)
     })
       .then();
@@ -52,7 +57,7 @@ class NewThxTxnForm extends React.Component {
         <div className='form-inner'>
           <form onSubmit={this.handSubmit}>
             <input type="text" value={this.state.str} onChange={this.handleChange}
-            placeholder='@shun +100 ありがとうございます '/>
+                   placeholder='@shun +100 ありがとうございます '/>
             <input type="submit" value="Submit" hidden/>
           </form>
         </div>
