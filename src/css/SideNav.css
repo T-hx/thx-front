@@ -7,6 +7,27 @@
     margin: auto;
 }
 
+.side-nav-container > .logo {
+    text-align: center;
+}
+
+.side-nav-container > .logo > a {
+    margin: auto;
+    display: block;
+    width: 50px;
+    height: 80px;
+    background-image: url(../img/thx.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    list-style: none;
+}
+
+.side-nav-container > .logo > a > span {
+    display: inline-block;
+    padding: 30px 0;
+    color: #999999;
+}
+
 .thx-amount-area {
     float: left;
     color: #999999;

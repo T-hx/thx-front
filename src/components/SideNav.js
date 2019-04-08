@@ -4,6 +4,7 @@ import '../css/SideNav.css'
 function Sidenav() {
   return (
     <div className='side-nav-container'>
+      <h1 className="logo"><a href='/'><span>thx</span></a></h1>
       <div className='thx-amount-area'>
         <h2 className='title'>今週もらった</h2>
         <p className='amount'>200</p>
