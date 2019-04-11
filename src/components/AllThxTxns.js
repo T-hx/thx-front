@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {ActionCableConsumer} from 'react-actioncable-provider';
 import {API_ROOT} from '../constants';
 import ThxTxn from "./ThxTxn";
@@ -19,7 +19,6 @@ class AllThxTxns extends React.Component {
   };
   
   handleReceivedThxTxn(response) {
-    console.log(response.thx_txn);
     this.setState({
       thx_txns: [...this.state.thx_txns, response.thx_txn],
     });
@@ -28,11 +27,10 @@ class AllThxTxns extends React.Component {
   render() {
     let { thx_txns } = this.state;
     return (
-      <Fragment>
-        <ActionCableConsumer channel={{channel: 'ThxTxnsChannel'}} onReceived={this.handleReceivedThxTxn}>
-          <ul>{mapThxTxns(thx_txns)}</ul>
-        </ActionCableConsumer>
-      </Fragment>
+      <ul>
+        {this.acc || (this.acc = <ActionCableConsumer channel={{channel: 'ThxTxnsChannel'}} onReceived={this.handleReceivedThxTxn} />)}
+        {mapThxTxns(thx_txns)}
+      </ul>
     );
   };
 }
@@ -40,7 +38,7 @@ class AllThxTxns extends React.Component {
 export default AllThxTxns;
 
 const mapThxTxns = (thx_txns) => {
-  return thx_txns.reverse().map(thx_txn => {
+  return thx_txns.map(thx_txn => {
     return (
       <ThxTxn data={ thx_txn } key={ thx_txn.id } />
     );

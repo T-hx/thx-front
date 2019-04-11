@@ -3,6 +3,7 @@ import WarningBanner from './WarningBanner';
 import '../css/Login.css'
 import {API_ROOT, HEADERS} from "../constants";
 import { Redirect } from 'react-router-dom'
+import axios from 'axios'
 
 class Login extends React.Component {
   constructor(props) {
@@ -41,17 +42,18 @@ class Login extends React.Component {
         email: this.state.email,
         password: this.state.password
       };
-      fetch(`${API_ROOT}/auth/sign_in`, {
+      axios({
+        url: `${API_ROOT}/auth/sign_in`,
         method: 'POST',
         headers: HEADERS,
-        body: JSON.stringify(params)
+        params: params
       })
-        .then(res => {
+        .then(responce => {
           localStorage.setItem('user',
             JSON.stringify({
-              'access-token': res.headers.get('access-token'),
-              client: res.headers.get('client'),
-              uid: res.headers.get('uid')
+              'access-token': responce.headers['access-token'],
+              client: responce.headers['client'],
+              uid: responce.headers['uid']
             }));
           this.props.history.push('/');
         })

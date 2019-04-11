@@ -10,7 +10,7 @@ class NewThxTxnForm extends React.Component {
       thx_txn: {
         thx: 0,
         comment: '',
-        receiver: ''
+        receiver_id: ''
       }
     };
     
@@ -27,9 +27,9 @@ class NewThxTxnForm extends React.Component {
     let str = this.state.str.split(' ');
     let params = {
       thx_txn: {
-        thx: str[0],
-        comment: str[1],
-        receiver: str[3]
+        receiver_id: str[0],
+        thx: str[1],
+        comment: str[2],
       }
     };
     
