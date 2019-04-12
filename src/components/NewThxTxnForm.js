@@ -1,6 +1,8 @@
 import React from 'react';
 import { API_ROOT } from '../constants';
 import '../css/NewThxTxnForm.css'
+import Grid from '@material-ui/core/Grid';
+import ThxAvatar from './ThxSmallAvatar'
 
 class NewThxTxnForm extends React.Component {
   constructor(props) {
@@ -54,16 +56,17 @@ class NewThxTxnForm extends React.Component {
   render() {
     return (
       <div className='form-outer'>
-        <div className='form-inner'>
-          <form onSubmit={this.handSubmit}>
+        <Grid container justify="flex-start" alignItems="flex-start">
+          <ThxAvatar />
+          <form className='thx-form' onSubmit={this.handSubmit}>
             <input type="text" value={this.state.str} onChange={this.handleChange}
                    placeholder='@shun +100 ありがとうございます '/>
             <input type="submit" value="Submit" hidden/>
           </form>
-        </div>
+        </Grid>
       </div>
     );
   }
 }
 
-export default NewThxTxnForm
+export default NewThxTxnForm;

@@ -9,12 +9,20 @@
     float: left;
 }
 
-.sender > ul {
+.thx-txn-avatar {
+    float: left;
+}
+
+.sender-container {
+    float: left;
+}
+
+.sender > .sender-container > ul {
     padding: 0;
     margin: 0;
 }
 
-.sender > ul > li {
+.sender > .sender-container > ul > li {
     list-style: none;
     display: inline-block;
 }
@@ -42,7 +50,6 @@
 
 .receiver {
     float: left;
-    padding: 20px;
 }
 
 .receiver > ul {

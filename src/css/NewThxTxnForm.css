@@ -1,21 +1,17 @@
 
-form {
+.thx-form {
+    width: 90%;
+    margin: 10px 10px 10px 0px;
     padding: 0;
-    margin: 0;
+    display: flex;
 }
 
 input {
     width: 100%;
-    padding: 5px;
+    padding: 10px;
 }
 
 .form-outer {
-    padding: 8px 8px;
     color: #fff;
-    text-align: center;
     background-image: linear-gradient(217deg, #DBFF71, #FF9900 70.71%);
-    border-radius: 3px 3px 0 0;
-}
-
-.form-inner {
 }
