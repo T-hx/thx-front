@@ -57,7 +57,7 @@ class NewThxTxnForm extends React.Component {
     return (
       <div className='form-outer'>
         <Grid container justify="flex-start" alignItems="flex-start">
-          <ThxSmallAvatar display={this.props.userInfo.nickname} />
+          <ThxSmallAvatar icon={this.props.userInfo.avatar_url} />
           <form className='thx-form' onSubmit={this.handSubmit}>
             <input type="text" value={this.state.str} onChange={this.handleChange}
                    placeholder='@shun +100 ありがとうございます '/>

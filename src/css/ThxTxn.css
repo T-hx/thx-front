@@ -7,6 +7,7 @@
 
 .sender {
     float: left;
+    width: 600px
 }
 
 .thx-txn-avatar {
@@ -15,6 +16,7 @@
 
 .sender-container {
     float: left;
+    width: 500px;
 }
 
 .sender > .sender-container > ul {
@@ -39,8 +41,9 @@
     width: 200px;
 }
 
-.sender > .comment {
-    padding: 20px;
+.sender > .sender-container > .comment {
+    padding: 10px;
+    font-size: 14px;
 }
 
 .thx-txn-container > p {

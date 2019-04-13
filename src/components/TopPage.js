@@ -25,7 +25,7 @@ class TopPage extends Component {
     })
       .then(response => {
         this.setState({
-          userInfo: response.data
+          userInfo: response.data.user
         })
       })
       .catch(error => {

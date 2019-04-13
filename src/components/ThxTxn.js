@@ -2,8 +2,6 @@ import React, {Component} from "react";
 import '../css/ThxTxn.css'
 import ThxSmallAvatar from "./ThxSmallAvatar";
 import ThxBigAvatar from './ThxBigAvatar'
-import Icon from '../img/shun.png'
-
 
 class ThxTxn extends Component {
   render() {
@@ -11,7 +9,7 @@ class ThxTxn extends Component {
       <li>
         <div className='thx-txn-container'>
           <div className='sender'>
-            <div className='thx-txn-avatar'><ThxSmallAvatar display={this.props.data.sender.nickname} icon={Icon}/></div>
+            <div className='thx-txn-avatar'><ThxSmallAvatar icon={this.props.data.sender.avatar_url} /></div>
             <div className='sender-container'>
               <ul>
                 <li className='name'>{ this.props.data.sender.name }</li>
@@ -25,9 +23,9 @@ class ThxTxn extends Component {
           </div>
           <p>></p>
           <div className='receiver'>
-            <ThxBigAvatar className='name' display={this.props.data.receiver.nickname}/>
+            <ThxBigAvatar className='name' icon={this.props.data.receiver.avatar_url}/>
             <div className='thx-txn-avatar-thx'>
-              <ThxSmallAvatar className='thx' display={this.props.data.thx}/>
+              <ThxSmallAvatar className='thx' display={'+' + this.props.data.thx}/>
             </div>
           </div>
         </div>

@@ -14,6 +14,7 @@ const styles = {
     height: 60,
   },
   orangeAvatar: {
+    fontSize: '12px',
     margin: 10,
     color: '#fff',
     backgroundColor: deepOrange[500],
@@ -29,8 +30,8 @@ function ThxSmallAvatar(props) {
   const {classes} = props;
   return (
     props.icon ?
-    <Avatar src={props.icon} className={classes.purpleAvatar} /> :
-      <Avatar className={classes.purpleAvatar}>{props.display}</Avatar>
+    <Avatar src={props.icon} className={classes.orangeAvatar} /> :
+      <Avatar className={classes.orangeAvatar}>{props.display}</Avatar>
   );
 }
 
