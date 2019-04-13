@@ -40,7 +40,7 @@ export default AllThxTxns;
 const mapThxTxns = (thx_txns) => {
   return thx_txns.map(thx_txn => {
     return (
-      <ThxTxn data={ thx_txn } key={ thx_txn.id } />
+        <ThxTxn data={ thx_txn } key={ thx_txn.id } />
     );
   });
 };

@@ -28,7 +28,9 @@ const styles = {
 function ThxSmallAvatar(props) {
   const {classes} = props;
   return (
-    <Avatar className={classes.purpleAvatar}>OP</Avatar>
+    props.icon ?
+    <Avatar src={props.icon} className={classes.purpleAvatar} /> :
+      <Avatar className={classes.purpleAvatar}>{props.display}</Avatar>
   );
 }
 

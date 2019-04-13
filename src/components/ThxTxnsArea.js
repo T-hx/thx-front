@@ -6,6 +6,7 @@ import NewThxTxnForm from "./NewThxTxnForm";
 
 function ThxTxnsArea(props) {
   const extra = props.value;
+  const userInfo = props.userInfo;
   let thx_txns_list;
   if (extra === 'all') {
     thx_txns_list = <AllThxTxns />;
@@ -16,7 +17,7 @@ function ThxTxnsArea(props) {
   }
   return (
     <div>
-      <NewThxTxnForm />
+      <NewThxTxnForm userInfo={userInfo} />
       {thx_txns_list}
     </div>
   )

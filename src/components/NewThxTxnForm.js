@@ -2,7 +2,7 @@ import React from 'react';
 import { API_ROOT } from '../constants';
 import '../css/NewThxTxnForm.css'
 import Grid from '@material-ui/core/Grid';
-import ThxAvatar from './ThxSmallAvatar'
+import ThxSmallAvatar from './ThxSmallAvatar'
 
 class NewThxTxnForm extends React.Component {
   constructor(props) {
@@ -57,7 +57,7 @@ class NewThxTxnForm extends React.Component {
     return (
       <div className='form-outer'>
         <Grid container justify="flex-start" alignItems="flex-start">
-          <ThxAvatar />
+          <ThxSmallAvatar display={this.props.userInfo.nickname} />
           <form className='thx-form' onSubmit={this.handSubmit}>
             <input type="text" value={this.state.str} onChange={this.handleChange}
                    placeholder='@shun +100 ありがとうございます '/>
