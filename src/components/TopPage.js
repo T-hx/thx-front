@@ -8,6 +8,7 @@ import '../css/TopPage.css'
 import {Redirect} from "react-router";
 import axios from 'axios'
 import {API_ROOT} from "../constants";
+import MDSpinner from 'react-md-spinner'
 
 class TopPage extends Component {
   constructor(props) {
@@ -37,9 +38,9 @@ class TopPage extends Component {
     return (
       localStorage.getItem('user') ?
         this.state.userInfo === null ?
-          <div>loading...</div> :
+          <MDSpinner /> :
           <div className='page'>
-            <SideNav/>
+            <SideNav userInfo={this.state.userInfo} />
             <Header/>
             <div className="main-container">
               <h1>タイムライン</h1>
