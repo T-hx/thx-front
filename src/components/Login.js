@@ -55,7 +55,7 @@ class Login extends React.Component {
               client: responce.headers['client'],
               uid: responce.headers['uid']
             }));
-          this.props.history.push('/');
+          this.props.history.push('/timeline');
         })
         .catch(() => {
           this.setState({message: 'メールアドレスまたはパスワードが違います'});
@@ -67,7 +67,7 @@ class Login extends React.Component {
     const message = this.state.message;
     return (
       localStorage.getItem('user') ?
-        <Redirect to={'/'}/> :
+        <Redirect to={'/timeline'}/> :
         <div id='container'>
           <div className='login_bg'>
             <div className='login'>
