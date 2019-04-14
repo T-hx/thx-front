@@ -20,6 +20,7 @@ class Sidenav extends React.Component {
   render() {
     return (
       <div className='side-nav-container'>
+        {this.ac || (this.ac = <ActionCableConsumer channel={{channel: 'UsersChannel', user_id: this.props.userInfo.id}} onReceived={this.handleReceivedUser} />)}
         <h1 className="logo"><a href='/'><span>thx</span></a></h1>
         <div className='thx-amount-area'>
           <h2 className='title'>今月thx残高</h2>
