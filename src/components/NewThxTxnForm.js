@@ -2,7 +2,7 @@ import React from 'react';
 import { API_ROOT } from '../constants';
 import '../css/NewThxTxnForm.css'
 import Grid from '@material-ui/core/Grid';
-import ThxSmallAvatar from './ThxSmallAvatar'
+import ThxSmallAvatar from './ThxNomalAvatar'
 
 class NewThxTxnForm extends React.Component {
   constructor(props) {

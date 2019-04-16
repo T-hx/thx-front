@@ -1,20 +1,4 @@
-.header-nav {
-    float: left;
-    padding: 10px;
-}
-
-.header-nav > ul {
-    display: block;
-    list-style: none;
-}
-
-.header-nav > ul > li {
-    list-style: none;
-    float: right;
-    margin: 0 20px;
-}
-
-.header-nav > ul > li:hover {
-    color: #FF8C00;
-    cursor: pointer;
+.header-container {
+    width: 90%;
+    text-align: right;
 }

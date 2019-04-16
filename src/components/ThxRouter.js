@@ -3,7 +3,7 @@ import TopPage from './TopPage';
 import Login from './Login';
 import React, {Component} from 'react';
 
-class App extends Component {
+class ThxRouter extends Component {
   render() {
     return (
       <BrowserRouter>
@@ -16,4 +16,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default ThxRouter;

@@ -6,15 +6,15 @@ import deepOrange from '@material-ui/core/colors/deepOrange';
 const styles = {
   orangeAvatar: {
     fontSize: '12px',
-    margin: 3,
+    margin: 10,
     color: '#fff',
-    width: 30,
-    height: 30,
+    width: 40,
+    height: 40,
     backgroundColor: deepOrange[500],
   },
 };
 
-function ThxSmallAvatar(props) {
+function ThxNomalAvatar(props) {
   const {classes} = props;
   return (
     props.icon ?
@@ -23,4 +23,4 @@ function ThxSmallAvatar(props) {
   );
 }
 
-export default withStyles(styles)(ThxSmallAvatar);
+export default withStyles(styles)(ThxNomalAvatar);

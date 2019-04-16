@@ -20,18 +20,20 @@ class TopPage extends Component {
   }
   
   componentDidMount() {
-    axios({
-      url: `${API_ROOT}/users/me`,
-      headers: JSON.parse(localStorage.user),
-    })
-      .then(response => {
-        this.setState({
-          userInfo: response.data.user
+    if (localStorage.getItem('user')) {
+      axios({
+        url: `${API_ROOT}/users/me`,
+        headers: JSON.parse(localStorage.user)
+      })
+        .then(response => {
+          this.setState({
+            userInfo: response.data.user
+          })
         })
-      })
-      .catch(error => {
+        .catch(error => {
       
-      })
+        })
+    }
   }
   
   render() {
@@ -41,7 +43,7 @@ class TopPage extends Component {
           <MDSpinner /> :
           <div className='page'>
             <SideNav userInfo={this.state.userInfo} />
-            <Header/>
+            <Header userInfo={this.state.userInfo}/>
             <div className="main-container">
               <h1>タイムライン</h1>
               <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({tabIndex})}>

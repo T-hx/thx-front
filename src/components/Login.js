@@ -78,7 +78,7 @@ class Login extends React.Component {
                 <form onSubmit={this.handleLogin}>
                   <div className='login_label'>メールアドレス</div>
                   <input className='login_input login_input-primary' name="email" type="email"
-                         placeholder="unipos@example.com"
+                         placeholder="thx@example.com"
                          value={this.state.email} onChange={this.handleChange}/>
                   <div className='login_label'>パスワード</div>
                   <input className='login_input login_input-primary' name="password" type="password"
