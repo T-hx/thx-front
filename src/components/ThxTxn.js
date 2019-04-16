@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import '../css/ThxTxn.css'
-import ThxSmallAvatar from "./ThxSmallAvatar";
+import ThxSmallAvatar from "./ThxNomalAvatar";
 import ThxBigAvatar from './ThxBigAvatar'
 
 class ThxTxn extends Component {
