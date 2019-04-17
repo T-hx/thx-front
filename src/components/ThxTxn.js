@@ -5,6 +5,7 @@ import ThxBigAvatar from './ThxBigAvatar'
 
 class ThxTxn extends Component {
   render() {
+    const avatar_url = this.props.data.receiver.avatar_url
     return(
       <li>
         <div className='thx-txn-container'>
@@ -23,7 +24,8 @@ class ThxTxn extends Component {
           </div>
           <p>></p>
           <div className='receiver'>
-            <ThxBigAvatar className='name' icon={this.props.data.receiver.avatar_url}/>
+            { avatar_url ? <ThxBigAvatar className='name' icon={this.props.data.receiver.avatar_url}/> :
+              <ThxBigAvatar className='name' icon={this.props.data.receiver.nickname}/>}
             <div className='thx-txn-avatar-thx'>
               <ThxSmallAvatar className='thx' display={'+' + this.props.data.thx}/>
             </div>

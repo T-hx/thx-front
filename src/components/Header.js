@@ -51,6 +51,7 @@ class Header extends Component {
   };
   
   render () {
+    const avatar_url = this.props.userInfo.avatar_url
     return (
       <div className='header-container'>
         <ThxBadges className='header-badges' />
@@ -61,7 +62,8 @@ class Header extends Component {
           color="primary"
           onClick={this.handleClick}
         >
-          <ThxSmallAvatar icon={this.props.userInfo.avatar_url} />
+          {avatar_url ? <ThxSmallAvatar icon={this.props.userInfo.avatar_url}/> :
+            <ThxSmallAvatar display={this.props.userInfo.nickname}/>}
         </Button>
         <Menu
           id="simple-menu"

@@ -5,7 +5,7 @@ import deepOrange from '@material-ui/core/colors/deepOrange';
 
 const styles = {
   orangeAvatar: {
-    fontSize: '12px',
+    fontSize: '24px',
     margin: 10,
     color: '#fff',
     width: 40,
@@ -19,7 +19,7 @@ function ThxNomalAvatar(props) {
   return (
     props.icon ?
     <Avatar src={props.icon} className={classes.orangeAvatar} /> :
-      <Avatar className={classes.orangeAvatar}>{props.display}</Avatar>
+      <Avatar className={classes.orangeAvatar}>{props.display[0]}</Avatar>
   );
 }
 

@@ -16,7 +16,7 @@ function ThxBigAvatar(props) {
   return (
     props.icon ?
       <Avatar src={props.icon} className={classes.BigAvatar} /> :
-      <Avatar className={classes.BigAvatar}>{props.display}</Avatar>
+      <Avatar className={classes.BigAvatar}>{props.display[0]}</Avatar>
   );
 }
 
