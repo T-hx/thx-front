@@ -5,12 +5,17 @@ import ThxBigAvatar from './ThxBigAvatar'
 
 class ThxTxn extends Component {
   render() {
-    const avatar_url = this.props.data.receiver.avatar_url
+    const sender_avatar_url = this.props.data.sender.avatar_url;
+    const receiver_avatar_url = this.props.data.receiver.avatar_url;
+    const sender_nickname = this.props.data.sender.nickname;
+    const receiver_nickname = this.props.data.receiver.nickname;
     return(
       <li>
         <div className='thx-txn-container'>
           <div className='sender'>
-            <div className='thx-txn-avatar'><ThxSmallAvatar icon={this.props.data.sender.avatar_url} /></div>
+            <div className='thx-txn-avatar'>
+              <ThxSmallAvatar icon={sender_avatar_url} display={sender_nickname[0]} />
+            </div>
             <div className='sender-container'>
               <ul>
                 <li className='name'>{ this.props.data.sender.name }</li>
@@ -24,8 +29,7 @@ class ThxTxn extends Component {
           </div>
           <p>></p>
           <div className='receiver'>
-            { avatar_url ? <ThxBigAvatar className='name' icon={this.props.data.receiver.avatar_url}/> :
-              <ThxBigAvatar className='name' icon={this.props.data.receiver.nickname}/>}
+            <ThxBigAvatar className='name' icon={receiver_avatar_url} display={receiver_nickname[0]}/>
             <div className='thx-txn-avatar-thx'>
               <ThxSmallAvatar className='thx' display={'+' + this.props.data.thx}/>
             </div>

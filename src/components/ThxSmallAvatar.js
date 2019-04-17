@@ -18,7 +18,7 @@ function ThxSmallAvatar(props) {
   const {classes} = props;
   return (
     props.icon ?
-    <Avatar src={props.icon} className={classes.orangeAvatar} /> :
+    <Avatar src={props.icon} /> :
       <Avatar className={classes.orangeAvatar}>{props.display[0]}</Avatar>
   );
 }

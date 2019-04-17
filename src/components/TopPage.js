@@ -54,8 +54,8 @@ class TopPage extends Component {
                   <Tab>拍手</Tab>
                 </TabList>
                 <TabPanel><ThxTxnsArea userInfo={this.state.userInfo} value='all'/></TabPanel>
-                <TabPanel><ThxTxnsArea value='send'/></TabPanel>
-                <TabPanel><ThxTxnsArea value='receive'/></TabPanel>
+                <TabPanel><ThxTxnsArea userInfo={this.state.userInfo} value='send'/></TabPanel>
+                <TabPanel><ThxTxnsArea userInfo={this.state.userInfo} value='receive'/></TabPanel>
                 <TabPanel> </TabPanel>
               </Tabs>
             </div>
